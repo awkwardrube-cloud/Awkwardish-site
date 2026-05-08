@@ -51,12 +51,26 @@ Build a podcast page for **Awkwardish** (host: Ruby Tobor‑Vasquez) including:
 - [x] Responsive (mobile drawer + grid reflow)
 
 ## Backlog / Next Steps
-- P1: Connect Spotify Web API to pull live episode list (replace static)
-- P1: Newsletter signup form (Mailchimp/ConvertKit) under "Connect"
+- P1: Newsletter signup form (Mailchimp/ConvertKit) under "Connect" — ✅ DONE 2025-12 (Mailchimp Marketing API)
+- P1: Connect podcast feed to pull live episode list — ✅ DONE 2025-12 (Anchor RSS via feedparser, 10‑min cache)
 - P2: Patreon / "Support the show" tip option
 - P2: Episode detail pages with show notes
 - P2: Season/Archive view if catalog grows
 - P2: Optional CMS (Sanity / Notion) so Ruby can self-edit episode highlights
+- P2: Welcome email automation in Mailchimp (Campaign → Customer Journey)
+- P2: Persist Mailchimp 4xx errors (typo'd email) in admin log
+
+## Newsletter Integration
+- Endpoint: `POST /api/newsletter/subscribe` { email, first_name? } → idempotent PUT to Mailchimp `lists/{audience}/members/{md5(email)}`
+- Stores local copy in MongoDB collection `newsletter_subscribers` for redundancy
+- Server prefix `us17`, audience `81a842d641`
+- Env keys: `MAILCHIMP_API_KEY`, `MAILCHIMP_SERVER_PREFIX`, `MAILCHIMP_AUDIENCE_ID`
+
+## RSS Episodes Integration
+- Endpoint: `GET /api/episodes?limit=N` returns parsed RSS feed
+- Source: `PODCAST_RSS_URL` env (Anchor.fm)
+- 10-minute in-memory cache (single-pod fine; revisit if scaled horizontally)
+- Auto-tag inference from title keywords (Mental Health, Coping & Care, Identity & Growth, etc.)
 
 ## Key Files
 - `/app/frontend/src/data/site.js` — all copy & links (single edit point)
