@@ -7,6 +7,7 @@ import { Listen } from "../components/sections/Listen";
 import { Episodes } from "../components/sections/Episodes";
 import { Merch } from "../components/sections/Merch";
 import { Connect } from "../components/sections/Connect";
+import { Support } from "../components/sections/Support";
 import { Newsletter } from "../components/sections/Newsletter";
 import { Footer } from "../components/sections/Footer";
 import { useReveal } from "../hooks/useReveal";
@@ -28,6 +29,7 @@ export default function Home() {
         <Episodes />
         <Merch />
         <Connect />
+        <Support />
         <Newsletter />
       </main>
       <Footer />

@@ -19,6 +19,14 @@ export const SITE = {
     url: "http://red-petal-project-inc.square.site/",
     label: "Shop the Merch",
   },
+  support: {
+    platform: "Ko-fi",
+    url: "https://ko-fi.com/awkwardrube925",
+    handle: "awkwardrube925",
+    tagline: "keep the messy middle going",
+    description:
+      "Awkwardish is independent and made with a whole lot of heart. If something here moved you, gave you a soft moment, or made you feel less alone — a small tip helps keep the mics on and the conversations flowing.",
+  },
   host: {
     name: "Ruby Tobor‑Vasquez",
     photoUrl:
