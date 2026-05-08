@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SITE } from "../../data/site";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Coffee } from "lucide-react";
 
 const NAV = [
   { label: "About", href: "#about" },
@@ -63,6 +63,17 @@ export const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <a
+            href={SITE.support.url}
+            target="_blank"
+            rel="noreferrer"
+            data-testid="header-kofi-cta"
+            aria-label="Tip on Ko-fi"
+            className="btn-press inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F0A6BF] text-[#341434] font-semibold text-sm hover:bg-[#E0578F] hover:text-[#F5E9D7] border border-[#341434]/10"
+          >
+            <Coffee size={15} />
+            Tip
+          </a>
+          <a
             href={SITE.merch.url}
             target="_blank"
             rel="noreferrer"
@@ -101,12 +112,23 @@ export const Header = () => {
               </a>
             ))}
             <a
+              href={SITE.support.url}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              data-testid="mobile-kofi-cta"
+              className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#F0A6BF] text-[#341434] font-semibold border border-[#341434]/10"
+            >
+              <Coffee size={16} />
+              Tip on Ko‑fi
+            </a>
+            <a
               href={SITE.merch.url}
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
               data-testid="mobile-merch-cta"
-              className="mt-2 inline-flex items-center justify-center px-5 py-3 rounded-full bg-[#341434] text-[#F5E9D7] font-semibold"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[#341434] text-[#F5E9D7] font-semibold"
             >
               Shop Merch
             </a>
