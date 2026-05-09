@@ -45,7 +45,7 @@ From cozy gear for your next reaction-video binge to essentials that bring a lit
                   <ArrowUpRight size={16} />
                 </a>
                 <span className="text-[#341434]/70 text-sm font-medium">
-                  awkwardishpod.square.site
+                  https://awkwardishpod.square.site
                 </span>
               </div>
             </div>
