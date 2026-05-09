@@ -16,7 +16,7 @@ export const SITE = {
       "https://open.spotify.com/embed/show/0UChrcN9cdZc8ahsFmh7t5?utm_source=generator&theme=0",
   },
   merch: {
-    url: "http://red-petal-project-inc.square.site/",
+    url: "http://awkwardishpod.square.site/",
     label: "Shop the Merch",
   },
   support: {
@@ -35,7 +35,7 @@ export const SITE = {
     bio: [
       "Ruby Tobor‑Vasquez is the founder and executive director of Red Petal Project Inc., a trauma‑informed designer, community storyteller, and the warm, slightly chaotic voice behind Awkwardish. She brings a blend of lived experience, emotional intelligence, humor, and cultural humility to every episode, creating a space where people feel seen without being judged and held without being rushed.",
       "As a mental health advocate living with Bipolar I, Ruby speaks with honesty and nuance about healing, identity shifts, and the nonlinear nature of growth. Her work — across nonprofit leadership, podcasting, and creative storytelling — centers dignity, accessibility, and community care.",
-      "Ruby's style is equal parts cozy, reflective, awkward-charming, and deeply human. She doesn't pretend to have all the answers; she invites you into the questions. Her voice makes people feel like they're sitting with a friend who gets it — someone who can hold the heavy with gentleness and the funny with ease.",
+      "Ruby's style is equal parts cozy, reflective, awkwardly charming, and deeply human. She doesn't pretend to have all the answers; she invites you into the questions. Her voice makes people feel like they're sitting with a friend who gets it — someone who can hold the heavy with gentleness and the funny with ease.",
     ],
   },
   about: [
@@ -45,7 +45,7 @@ export const SITE = {
   manifesto: [
     "Awkwardish isn't about perfection. It's about presence.",
     "It's about the messy middle.",
-    "It's about being human — awkwardly, tenderly, and with heart.",
+    "It's about being human — awkwardly, softly, and with heart.",
   ],
   episodes: [
     {
@@ -105,7 +105,7 @@ export const SITE = {
     "cozy-chaotic",
     "emotionally intelligent",
     "stigma-free",
-    "awkward, tenderly, with heart",
+    "awkwardly, softly, with heart",
     "presence over perfection",
   ],
 };
