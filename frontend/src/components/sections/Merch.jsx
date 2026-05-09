@@ -29,9 +29,7 @@ export const Merch = () => {
                 </span>
               </h2>
               <p className="mt-7 text-lg text-[#341434]/85 leading-relaxed max-w-xl">
-                Every purchase from the Red Petal Project shop helps fund
-                trauma‑informed community care, storytelling, and the show
-                itself. Small soft acts → big soft ripples.
+From cozy gear for your next reaction-video binge to essentials that bring a little more 'ceremony' to your home organization, grab something that feels like us.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -47,7 +45,7 @@ export const Merch = () => {
                   <ArrowUpRight size={16} />
                 </a>
                 <span className="text-[#341434]/70 text-sm font-medium">
-                  red‑petal‑project‑inc.square.site
+                  awkwardishpod.square.site
                 </span>
               </div>
             </div>
