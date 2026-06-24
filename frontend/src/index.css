@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Awkwardish — warm, cozy fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Caveat:wght@400;500;600;700&family=Figtree:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Figtree', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #F5E9D7;
+    color: #1F1216;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        /* Awkwardish palette */
+        --awk-cream: 36 55% 90%;        /* #F5E9D7 base background */
+        --awk-tan: 32 45% 78%;          /* #E1C9A7 warm tan */
+        --awk-tan-deep: 28 38% 55%;     /* #A88466 deeper tan */
+        --awk-plum: 320 38% 22%;        /* #4F2247 deep plum */
+        --awk-plum-deep: 320 50% 14%;   /* #341434 darkest plum */
+        --awk-pink: 340 70% 78%;        /* #F0A6BF soft pink */
+        --awk-pink-bright: 340 78% 64%; /* #E0578F bright pink */
+        --awk-ink: 320 25% 10%;         /* #20141E warm black */
+
+        /* shadcn tokens mapped to brand */
+        --background: 36 55% 92%;
+        --foreground: 320 25% 10%;
+        --card: 36 60% 96%;
+        --card-foreground: 320 25% 10%;
+        --popover: 36 60% 96%;
+        --popover-foreground: 320 25% 10%;
+        --primary: 320 38% 22%;
+        --primary-foreground: 36 55% 96%;
+        --secondary: 32 45% 84%;
+        --secondary-foreground: 320 38% 22%;
+        --muted: 32 35% 86%;
+        --muted-foreground: 320 18% 32%;
+        --accent: 340 70% 78%;
+        --accent-foreground: 320 38% 22%;
+        --destructive: 0 70% 50%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 32 35% 78%;
+        --input: 32 35% 82%;
+        --ring: 320 38% 22%;
+        --radius: 1.25rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    ::selection {
+        background: #4F2247;
+        color: #F5E9D7;
+    }
+}
+
+/* Display typography */
+.font-display {
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+}
+
+.font-script {
+    font-family: 'Caveat', cursive;
+}
+
+.font-body {
+    font-family: 'Figtree', sans-serif;
+}
+
+/* Cozy paper texture background */
+.bg-paper {
+    background-color: #F5E9D7;
+    background-image:
+        radial-gradient(at 20% 10%, rgba(240, 166, 191, 0.18) 0px, transparent 50%),
+        radial-gradient(at 80% 90%, rgba(79, 34, 71, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(225, 201, 167, 0.3) 0px, transparent 60%);
+}
+
+.bg-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.08 0 0 0 0 0.12 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Soft shadow for cozy cards */
+.shadow-cozy {
+    box-shadow:
+        0 1px 2px rgba(79, 34, 71, 0.08),
+        0 8px 24px -8px rgba(79, 34, 71, 0.18),
+        0 24px 48px -24px rgba(79, 34, 71, 0.15);
+}
+
+.shadow-cozy-lg {
+    box-shadow:
+        0 2px 4px rgba(79, 34, 71, 0.1),
+        0 16px 40px -12px rgba(79, 34, 71, 0.25),
+        0 40px 80px -32px rgba(79, 34, 71, 0.2);
+}
+
+/* Animated underline for nav */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #E0578F;
+    border-radius: 999px;
+    transition: width 0.35s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Marquee */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+.marquee-track {
+    animation: marquee 38s linear infinite;
+}
+
+/* Float animation */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+}
+.float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes float-slower {
+    0%, 100% { transform: translateY(0px) rotate(3deg); }
+    50% { transform: translateY(-18px) rotate(-3deg); }
+}
+.float-slower {
+    animation: float-slower 11s ease-in-out infinite;
+}
+
+/* Scribble underline */
+.scribble {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'%3E%3Cpath d='M2 9 C 40 2, 80 14, 120 7 S 180 4, 198 10' stroke='%23E0578F' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 0.5em;
+    padding-bottom: 0.15em;
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Reveal on scroll (basic) */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Soft button press */
+.btn-press {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+.btn-press:hover {
+    transform: translateY(-2px);
+}
+.btn-press:active {
+    transform: translateY(0px) scale(0.98);
+}
+
+/* Sticker/tape decoration */
+.tape {
+    position: absolute;
+    width: 90px;
+    height: 26px;
+    background: rgba(240, 166, 191, 0.7);
+    box-shadow: 0 2px 6px rgba(79, 34, 71, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
